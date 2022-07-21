@@ -32,24 +32,17 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a href="nav-link" href="{{route('post.index')}}">Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="nav-link" href="{{route('siswa.index')}}">Siswa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="nav-link" href="{{route('nilai.index')}}">Nilai</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="nav-link" href="{{route('jurusan.index')}}">Jurusan</a>
-                        </li>
+                    <div class="dropdown" style="margin-right:18 rem;">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Data Sekolah
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{route('post.index')}}">Post</a></li>
+                        <li><a class="dropdown-item" href="{{route('siswa.index')}}">Siswa</a></li>
+                        <li><a class="dropdown-item" href="{{route('nilai.index')}}">Nilai</a></li>
+                        <li><a class="dropdown-item" href="{{route('jurusan.index')}}">Jurusan</a></li>
                     </ul>
-
+                    </div>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
