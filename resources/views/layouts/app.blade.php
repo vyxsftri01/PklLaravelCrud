@@ -34,7 +34,7 @@
                 </button>
                     <div class="dropdown" style="margin-right:18 rem;">
                     <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Data Sekolah
+                        Data Smk
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="{{route('post.index')}}">Post</a></li>
