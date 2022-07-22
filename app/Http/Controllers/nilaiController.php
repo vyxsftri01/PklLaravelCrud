@@ -18,30 +18,24 @@ class nilaiController extends Controller
     }
     public function grade($a)
     {
-         if($a <= 100 && $a >= 90){
-            $b = "A";
+         if($a <= 100 && $a >= 80){
+            $grade = "A";
          }
-         elseif($a <= 89 && $a >= 80){
-            $b = "B";
+         elseif($a < 80 && $a >= 60){
+            $grade = "B";
          }
-         elseif($a <= 79 && $a >= 70){
-            $b = "C";
-         }
-         elseif($a <= 69 && $a >= 60){
-            $b = "D";
-         }
-         elseif($a <= 59 && $a >= 50){
-            $b = "E";
+         elseif($a < 60 && $a >= 30){
+            $grade = "C";
          }
          else{
-            $b = "Grade Eror!";
+            $grade = "Grade Error!";
          }
-         return $b;
+         return $grade;
     }
     public function index()
     {
         $a =nilai::all();
-        return view('nilai.index',['nilai'=> $a]);
+        return view('nilai.index',['nilai' => $a]);
     }
 
     /**
@@ -65,17 +59,17 @@ class nilaiController extends Controller
         $validated = $request->validate([
             'nis' => 'required|unique:nilai|max:255',
             'kode_mapel' => 'required',
-            'nilai1' => 'required',
-            'grade' => 'required',
+            'nilai1' => 'required'
+            
         ]);
 
         $nilai = new nilai();
         $nilai->nis = $request->nis;
         $nilai->kode_mapel = $request->kode_mapel;
         $nilai->nilai1 = $request->nilai1;
-        $nilai->grade =$this->grade($nilai->nilai);
+        $nilai->grade = $this->grade($nilai->nilai1);
         $nilai->save();
-        return redirect()->route('nilai.index')->with('succes',
+        return redirect()->route('nilai.index')->with('success',
         'Data berhasil dimuat!');
     }
 
@@ -88,7 +82,7 @@ class nilaiController extends Controller
     public function show($id)
     {
         $nilai = nilai::findOrFail($id);
-        return view('nilai.show',compact('nilai'));
+        return view('nilai.show', compact('nilai'));
     }
 
     /**
@@ -100,7 +94,7 @@ class nilaiController extends Controller
     public function edit($id)
     {
         $nilai = nilai::findOrFail($id);
-        return view('nilai.edit',compact('nilai'));
+        return view('nilai.edit', compact('nilai'));
     }
 
     /**
@@ -115,17 +109,17 @@ class nilaiController extends Controller
         $validated = $request->validate([
             'nis' => 'required',
             'kode_mapel' => 'required',
-            'nilai1' => 'required',
-            'grade' => 'required',
+            'nilai1' => 'required'
+            
         ]);
 
         $nilai = nilai::findOrFail($id);
         $nilai->nis = $request->nis;
         $nilai->kode_mapel = $request->kode_mapel;
         $nilai->nilai1 = $request->nilai1;
-        $nilai->grade =$this->grade($nilai->nilai);
+        $nilai->grade = $this->grade($nilai->nilai1);
         $nilai->save();
-        return redirect()->route('nilai.index')->with('succes',
+        return redirect()->route('nilai.index')->with('success',
         'Data berhasil diupdate!');
     }
 
@@ -139,7 +133,7 @@ class nilaiController extends Controller
     {
         $nilai = nilai::findOrfail($id);
         $nilai->delete();
-        return redirect()->route('nilai.index')->with('Succes',
+        return redirect()->route('nilai.index')->with('success',
         'Data berhasil dihapus!');
 
     }

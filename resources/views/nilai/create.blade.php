@@ -22,7 +22,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="">Kode Mapel</label>
+                                <label for="">Kode Mata Pelajaran</label>
                                 <input type="text" name="kode_mapel"
                                     class="form-control @error('kode_mapel') is-invalid @enderror">
                                 @error('kode_mapel')
@@ -41,7 +41,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="">Grade</label>
                                 <input type="text" name="grade"
                                     class="form-control @error('grade') is-invalid @enderror">
@@ -50,7 +50,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div> -->
 
                             <div class="mb-3">
                                 <div class="d-grid gap-2">

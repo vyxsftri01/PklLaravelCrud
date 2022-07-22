@@ -15,9 +15,9 @@ class nilaiTableSeeder extends Seeder
     public function run()
     {
         $table = [
-            ['nis' => 1001, 'kode_mapel' => '111', 'nilai1' => 70 ,'grade' => 'A'],
-            ['nis' => 1002, 'kode_mapel' => '111', 'nilai1' => 70 ,'grade' => 'A'],
-            ['nis' => 1003, 'kode_mapel' => '111', 'nilai1' => 70 ,'grade' => 'A'],
+            ['nis' => 1001, 'kode_mapel' => '111', 'nilai1' => 70 ,'grade' => ''],
+            ['nis' => 1002, 'kode_mapel' => '111', 'nilai1' => 70 ,'grade' => ''],
+            ['nis' => 1003, 'kode_mapel' => '111', 'nilai1' => 50 ,'grade' => ''],
         ];
         DB::table('nilai')->insert($table);
     }

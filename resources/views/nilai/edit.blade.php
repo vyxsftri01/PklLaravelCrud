@@ -23,7 +23,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="">Kode Mata Pelajaram</label>
+                                <label for="">Kode Mata Pelajaran</label>
                                 <input type="text" name="kode_mapel" value="{{ $nilai->kode_mapel }}"
                                     class="form-control @error('kode_mapel') is-invalid @enderror">
                                 @error('kode_mapel')
@@ -34,7 +34,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="">Nilai</label>
-                                <input type="text" name="nilai1" value="{{ $nilai->nilai1 }}"
+                                <input type="number" name="nilai1" value="{{ $nilai->nilai1 }}"
                                     class="form-control @error('nilai1') is-invalid @enderror">
                                 @error('nilai1')
                                     <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="">Grade</label>
                                 <input type="text" name="grade" value="{{ $nilai->grade }}"
                                     class="form-control @error('grade') is-invalid @enderror">
@@ -51,7 +51,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary" type="submit">Save</button>
